@@ -38,7 +38,7 @@ public class LUTFilter implements IImageFilter{
 				g = imageIn.getGComponent(x, y);
 				b = imageIn.getBComponent(x, y);
 				
-				imageIn.setPixelColor(x, y, Image.SAFECOLOR(m_LUT[r]), Image.SAFECOLOR(m_LUT[g]), Image.SAFECOLOR(m_LUT[b]));
+				imageIn.setPixelColor(x, y, Image.SAFECOLOR(m_LUT[r]), Image.SAFECOLOR(m_LUT[g]), Image.SAFECOLOR(m_LUT[b]),imageIn.getAComponent(x, y));
 			}
 		}
 		return imageIn;

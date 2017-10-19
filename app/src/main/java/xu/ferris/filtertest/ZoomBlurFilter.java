@@ -79,7 +79,7 @@ public class ZoomBlurFilter implements IImageFilter{
 							sa += ta ;
 						}
 				   }
-				   imageIn.setPixelColor(x, y, Image.SAFECOLOR(sr/sa), Image.SAFECOLOR(sg/sa), Image.SAFECOLOR(sb/sa));
+				   imageIn.setPixelColor(x, y, Image.SAFECOLOR(sr/sa), Image.SAFECOLOR(sg/sa), Image.SAFECOLOR(sb/sa),imageIn.getAComponent(x, y));
 			  }
 		 }
         return imageIn;

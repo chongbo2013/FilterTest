@@ -40,7 +40,7 @@ public class ReliefFilter implements IImageFilter{
 		        if (bb > 255) bb = 255;
 		        if (bb < 0) bb = 0;  
 		        
-		        imageIn.setPixelColor(x, y, rr, gg, bb);
+		        imageIn.setPixelColor(x, y, rr, gg, bb,imageIn.getAComponent(x, y));
 	         }
         } 
         return imageIn;

@@ -109,7 +109,7 @@ public class RadialDistortionFilter  implements IImageFilter{
                     g = clone.getGComponent(x, y);
                     b = clone.getBComponent(x, y);                   
                 }
-                imageIn.setPixelColor(x,y,r,g,b);
+                imageIn.setPixelColor(x,y,r,g,b,imageIn.getAComponent(x, y));
             }
         }
         return imageIn;

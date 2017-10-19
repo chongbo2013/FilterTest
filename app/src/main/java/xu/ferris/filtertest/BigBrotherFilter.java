@@ -74,10 +74,10 @@ public class BigBrotherFilter implements IImageFilter {
 
                 l_grayIntensity = 255-(imageIn.getRComponent(a_x+l_x, a_y+l_y));
                 if(l_grayIntensity > arrDither[x]){
-                    imageIn.setPixelColor(a_x+l_x, a_y+l_y, 0,0,0);
+                    imageIn.setPixelColor(a_x+l_x, a_y+l_y, 0,0,0,imageIn.getAComponent(a_x+l_x, a_y+l_y));
                 }
                 else{
-                    imageIn.setPixelColor(a_x+l_x, a_y+l_y, 255,255,255);
+                    imageIn.setPixelColor(a_x+l_x, a_y+l_y, 255,255,255,imageIn.getAComponent(a_x+l_x, a_y+l_y));
                 }
             }
         }

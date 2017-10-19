@@ -68,7 +68,7 @@ public class ReflectionFilter  implements IImageFilter{
                     r = clone.getRComponent(x, y);
                     g = clone.getGComponent(x, y);
                     b = clone.getBComponent(x, y);
-                    imageIn.setPixelColor(x, y_pos, r, g, b);
+                    imageIn.setPixelColor(x, y_pos, r, g, b,imageIn.getAComponent(x, y));
                 }
             }
         }
@@ -94,7 +94,7 @@ public class ReflectionFilter  implements IImageFilter{
 	                r = clone.getRComponent(x, y);
 	                g = clone.getGComponent(x, y);
 	                b = clone.getBComponent(x, y);
-	                imageIn.setPixelColor(x_pos, y, r, g, b);
+	                imageIn.setPixelColor(x_pos, y, r, g, b,imageIn.getAComponent(x, y));
 	            }
 	        }
         }

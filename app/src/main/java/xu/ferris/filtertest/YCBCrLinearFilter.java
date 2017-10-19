@@ -130,7 +130,7 @@ public class YCBCrLinearFilter implements IImageFilter{
                 // convert back to RGB
                 rgb = YCbCr.ToRGB(ycbcr, rgb);
 
-                imageIn.setPixelColor(x, y, rgb.R, rgb.G, rgb.B);
+                imageIn.setPixelColor(x, y, rgb.R, rgb.G, rgb.B,imageIn.getAComponent(x, y));
             }
         }
         return imageIn;

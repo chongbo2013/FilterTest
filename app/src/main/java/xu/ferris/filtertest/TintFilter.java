@@ -47,7 +47,7 @@ public class TintFilter implements IImageFilter {
                 g = (byte)((gray * tg) >> 8);
                 b = (byte)((gray * tb) >> 8);
 
-                imageIn.setPixelColor(x,y,r,g,b);
+                imageIn.setPixelColor(x,y,r,g,b,imageIn.getAComponent(x, y));
             }
        } 
        return imageIn;

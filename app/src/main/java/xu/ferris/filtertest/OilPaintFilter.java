@@ -42,7 +42,7 @@ public class OilPaintFilter implements IImageFilter{
             	  r = clone.getRComponent(xx, yy);
             	  g = clone.getGComponent(xx, yy);
             	  b = clone.getBComponent(xx, yy);
-	        	  imageIn.setPixelColor(x, y, r, g, b);
+	        	  imageIn.setPixelColor(x, y, r, g, b,imageIn.getAComponent(x, y));
              }
         } 
         return imageIn;     

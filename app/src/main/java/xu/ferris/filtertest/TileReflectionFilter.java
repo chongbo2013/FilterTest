@@ -155,7 +155,7 @@ public class TileReflectionFilter implements IImageFilter{
 					    g += imageIn.getGComponent(xSample, ySample);
 					    b += imageIn.getBComponent(xSample, ySample);
 					 }
-				 imageIn.setPixelColor(x, y, Image.SAFECOLOR(r/aasamples), Image.SAFECOLOR(g/aasamples), Image.SAFECOLOR(b/aasamples));
+				 imageIn.setPixelColor(x, y, Image.SAFECOLOR(r/aasamples), Image.SAFECOLOR(g/aasamples), Image.SAFECOLOR(b/aasamples),imageIn.getAComponent(x, y));
 			  }
 		  }
 		  return imageIn;

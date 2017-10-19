@@ -64,9 +64,15 @@ public class EdgeFilter implements IImageFilter {
                 // Magnitudes sum
                 magnitude = 255 - Image.SAFECOLOR(Math.abs(grayX) + Math.abs(grayY));
                 Paint grayscaleColor = grayMatrix[magnitude];
-
                 // Apply the color into a new image
-                imageIn.setPixelColor(x, y, grayscaleColor.getColor());
+                int value=grayscaleColor.getColor();
+
+                int a=imageIn.getAComponent(x, y);
+                int r=imageIn.getRComponent(grayscaleColor.getColor());
+                int g=imageIn.getGComponent(grayscaleColor.getColor());
+                int b=imageIn.getBComponent(grayscaleColor.getColor());
+                int newColor=Color.argb(a,r,g,b);
+                imageIn.setPixelColor(x, y, newColor);
             }
         }
 

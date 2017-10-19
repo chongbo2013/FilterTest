@@ -57,7 +57,7 @@ public class RaiseFrameFilter implements IImageFilter{
 			    int colorG = cr & 0x00FF00 >> 8;
 			    int colorB = cr & 0x0000FF;
 				int t = 0xFF - a ;
-				imageIn.setPixelColor(x, y, (colorR * a + r * t) / 0xFF, (colorG * a + g * t) / 0xFF, (colorB * a + b * t) / 0xFF);
+				imageIn.setPixelColor(x, y, (colorR * a + r * t) / 0xFF, (colorG * a + g * t) / 0xFF, (colorB * a + b * t) / 0xFF,imageIn.getAComponent(x, y));
 			}
 		}
         return imageIn;     

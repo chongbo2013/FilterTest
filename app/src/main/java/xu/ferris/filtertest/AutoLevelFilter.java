@@ -122,16 +122,17 @@ public class AutoLevelFilter implements IImageFilter{
 	        }
 	    }
 	    Image clone = imageIn.clone();
-	    int r,g,b;
+	    int r,g,b,a;
 	    for (int x = 0; x < imageIn.getWidth() - 1; x++){
   			 for (int y = 0; y < imageIn.getHeight() - 1; y++)  {  
   				r = clone.getRComponent(x, y);
   				g = clone.getGComponent(x, y);
   				b = clone.getBComponent(x, y);
+				 a=clone.getAComponent(x, y);
 		        r = (r * intensity_invert + rr[r] * intensity) >> 8;
 		        g = (g * intensity_invert + gg[g] * intensity) >> 8;
 		        b = (b * intensity_invert + bb[b] * intensity) >> 8;
-		        imageIn.setPixelColor(x, y, r, g, b);
+		        imageIn.setPixelColor(x, y, r, g, b,a);
 		 	 }
 	    }
 	    return imageIn;//��ֱ��ͼģʽ��ǿ

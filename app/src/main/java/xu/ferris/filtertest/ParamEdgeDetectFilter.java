@@ -81,7 +81,7 @@ public class ParamEdgeDetectFilter  extends ConvolutionFilter{
                  if (DoInversion) {
                      b = 255 - b;
                  }  
-                 imageIn.setPixelColor(x,y,r,g,b);
+                 imageIn.setPixelColor(x,y,r,g,b,imageIn.getAComponent(x, y));
              }
          }
          return imageIn;
@@ -111,7 +111,7 @@ public class ParamEdgeDetectFilter  extends ConvolutionFilter{
                 if (DoInversion){
                     rgb = 0xff - rgb;
                 }
-                imageIn.setPixelColor(x,y,rgb,rgb,rgb);
+                imageIn.setPixelColor(x,y,rgb,rgb,rgb,imageIn.getAComponent(x, y));
             }
         }
         return imageIn;

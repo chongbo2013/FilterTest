@@ -42,13 +42,13 @@ public class MonitorFilter implements IImageFilter {
                 for(int w=0; w<3; w++){
                     if(y+w < imageIn.getHeight()){
                         if(w == 0){
-                            imageIn.setPixelColor(x,y+w,r,0,0);
+                            imageIn.setPixelColor(x,y+w,r,0,0,imageIn.getAComponent(x, y+w));
                         }
                         else if(w ==1){
-                            imageIn.setPixelColor(x,y+w,0,g,0);
+                            imageIn.setPixelColor(x,y+w,0,g,0,imageIn.getAComponent(x, y+w));
                         }
                         else if(w==2){
-                            imageIn.setPixelColor(x,y+w,0,0,b);
+                            imageIn.setPixelColor(x,y+w,0,0,b,imageIn.getAComponent(x, y+w));
                         }
                     }
                 }                               

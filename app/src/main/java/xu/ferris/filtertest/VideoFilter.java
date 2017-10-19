@@ -99,7 +99,7 @@ public class VideoFilter implements IImageFilter{
     	int[] pattern_width = new int[] { 2, 1, 3, 5 };
         int[] pattern_height = new int[] { 6, 3, 3, 15 };
 
-        int r, g, b;
+        int r, g, b,a;
         for (int x = 0; x < imageIn.getWidth(); x++)
         {
             for (int y = 0; y < imageIn.getHeight(); y++)
@@ -107,11 +107,13 @@ public class VideoFilter implements IImageFilter{
                 r = imageIn.getRComponent(x, y);
                 g = imageIn.getGComponent(x, y);
                 b = imageIn.getBComponent(x, y);
-
+                a = imageIn.getAComponent(x, y);
                 int nWidth = pattern_width[(int)m_VideoType];
                 int nHeight = pattern_height[(int)m_VideoType];
                 int index = nWidth * (y % nHeight) + (x % nWidth);
-
+                if(a>0){
+                    System.out.print("");
+                }
                 index = pattern[index];
                 if (index == 0)
                     r = Function.FClamp0255(2 * r);
@@ -120,7 +122,7 @@ public class VideoFilter implements IImageFilter{
                 if (index == 2)
                     b = Function.FClamp0255(2 * b);
 
-                imageIn.setPixelColor(x, y, r, g, b);
+                imageIn.setPixelColor(x, y, r, g, b,a);
             }
         }
         return imageIn;

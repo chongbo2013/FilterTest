@@ -45,7 +45,7 @@ public class MosaicFilter implements IImageFilter{
 	    	             g = imageIn.getGComponent(x, y);
 		                 b = imageIn.getBComponent(x, y);
 		         	 }
-    	       		 imageIn.setPixelColor(x, y, r, g, b);
+    	       		 imageIn.setPixelColor(x, y, r, g, b,imageIn.getAComponent(x, y));
     	       	 }
     	       	 else{ //������һ��          */ 	       		 
     	             imageIn.setPixelColor(x, y, imageIn.getPixelColor(x, y -1));

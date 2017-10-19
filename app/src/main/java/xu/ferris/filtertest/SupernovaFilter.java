@@ -125,7 +125,7 @@ public class SupernovaFilter implements IImageFilter{
 	
 					r += ws ;
 					pixel[m] = Function.FClamp0255 (r*255) ;
-					imageIn.setPixelColor(x, y, pixel[0], pixel[1], pixel[2]);
+					imageIn.setPixelColor(x, y, pixel[0], pixel[1], pixel[2],imageIn.getAComponent(x, y));
 				}
 			}
 		}

@@ -203,7 +203,7 @@ public class ImageBlender {
 		        r = (r1 * num2) + (r * num);
 		        g = (g1 * num2) + (g * num);
 		        b = (b1 * num2) + (b * num); 
-		        source1.setPixelColor(x, y, r >> 8, g >> 8, b >> 8);
+		        source1.setPixelColor(x, y, r >> 8, g >> 8, b >> 8,source1.getAComponent(x, y));
 		        //input1.setPixelColour(x, y, r, g, b);
 		    }
         }

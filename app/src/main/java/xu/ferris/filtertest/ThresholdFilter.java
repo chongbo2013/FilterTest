@@ -39,7 +39,7 @@ public class ThresholdFilter implements IImageFilter{
 
                  int rgb = (((r * 0x1b36) + (g * 0x5b8c)) + (b * 0x93e)) >> 15;
             	 r = g = b  = rgb > threshold ? 0xff : 0;
-                 imageIn.setPixelColor(x,y,r,g,b);
+                 imageIn.setPixelColor(x,y,r,g,b,imageIn.getAComponent(x, y));
              }
         } 
         return imageIn;

@@ -40,7 +40,7 @@ public class BrickFilter implements IImageFilter{
             	  b = clone.getBComponent(x, y);
             	  avg = (r + g + b) / 3;
             	  avg = avg >= ThreshHold ? 255 : 0;
-	        	  imageIn.setPixelColor(x, y, avg, avg, avg);
+	        	  imageIn.setPixelColor(x, y, avg, avg, avg,imageIn.getAComponent(x, y));
              }
         } 
         return imageIn;     

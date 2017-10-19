@@ -59,7 +59,7 @@ public class FillPatternFilter  implements IImageFilter{
                 r = (r * mix2) + (r1 * mix1);
 		        g = (g * mix2) + (g1 * mix1);
 		        b = (b * mix2) + (b1 * mix1); 
-		        imageIn.setPixelColor(x, y, r >> 8, g >> 8, b >> 8);
+		        imageIn.setPixelColor(x, y, r >> 8, g >> 8, b >> 8,imageIn.getAComponent(x, y));
            }
         }
         return imageIn;

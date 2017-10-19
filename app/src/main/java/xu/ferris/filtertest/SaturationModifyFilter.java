@@ -51,7 +51,7 @@ public class SaturationModifyFilter implements IImageFilter{
                  r = (nego7 > 255f) ? 255 : ((nego7 < 0f) ? 0 : ((int) nego7));
                  g = (nego8 > 255f) ? 255 : ((nego8 < 0f) ? 0 : ((int) nego8));
                  b = (nego9 > 255f) ? 255 : ((nego9 < 0f) ? 0 : ((int) nego9));
-                 imageIn.setPixelColor(x,y,r,g,b);
+                 imageIn.setPixelColor(x,y,r,g,b,imageIn.getAComponent(x, y));
              }
         } 
         return imageIn;

@@ -67,7 +67,7 @@ public float ContrastIntensity = 1f;
                      g = (g > 0xff) ? ((byte) 0xff) : ((g < 0) ? ((byte) 0) : ((byte) g));
                      b = (b > 0xff) ? ((byte) 0xff) : ((b < 0) ? ((byte) 0) : ((byte) b));
                  }    
-                 imageIn.setPixelColor(x,y,r,g,b);
+                 imageIn.setPixelColor(x,y,r,g,b,imageIn.getAComponent(x, y));
                  pos++;
             }
         } 

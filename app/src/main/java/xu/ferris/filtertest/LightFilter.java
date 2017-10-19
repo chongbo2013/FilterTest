@@ -56,7 +56,7 @@ public class LightFilter extends RadialDistortionFilter{
 	            	  b = b + (int)pixel;
 	            	  b = Math.max(0, Math.min(b, 255));          	  
             	 }	
-            	 imageIn.setPixelColor(x, y, r, g, b);
+            	 imageIn.setPixelColor(x, y, r, g, b,imageIn.getAComponent(x, y));
              }
         } 
         return imageIn;     

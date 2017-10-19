@@ -80,7 +80,7 @@ public class VignetteFilter  implements IImageFilter{
                     b = (byte)(bi > 255 ? 255 : (bi < 0 ? 0 : bi));
                  }
          
-                 imageIn.setPixelColor(x,y,r,g,b);
+                 imageIn.setPixelColor(x,y,r,g,b,imageIn.getAComponent(x, y));
              }
         } 
         return imageIn;

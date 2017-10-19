@@ -154,7 +154,7 @@ public class GaussianBlurFilter  implements IImageFilter{
 	        int num = ((i + 3) * newwidth) + 3;
 	        for (int j = 0; j < width; j++){
 	            int pos = (num + j) * 3;
-	            imageIn.setPixelColor(j, i,  (byte) (imageArray[pos] * 255f),  (byte) (imageArray[pos + 1] * 255f), (byte) (imageArray[pos + 2] * 255f));
+	            imageIn.setPixelColor(j, i,  (byte) (imageArray[pos] * 255f),  (byte) (imageArray[pos + 1] * 255f), (byte) (imageArray[pos + 2] * 255f),imageIn.getAComponent(j,i));
 	        }
 	    }
 	    return imageIn;

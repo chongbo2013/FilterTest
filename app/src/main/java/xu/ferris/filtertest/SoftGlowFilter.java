@@ -55,7 +55,7 @@ public class SoftGlowFilter implements IImageFilter{
 				   r = 255 - (255 - old_r)*(255 - imageIn.getRComponent(x, y))/255 ;
 				   g = 255 - (255 - old_g)*(255 - imageIn.getGComponent(x, y))/255 ;
 				   b = 255 - (255 - old_b)*(255 - imageIn.getBComponent(x, y))/255 ;
-				   imageIn.setPixelColor(x, y, r, g, b);
+				   imageIn.setPixelColor(x, y, r, g, b,imageIn.getAComponent(x, y));
 		    }
 		}
         return imageIn;

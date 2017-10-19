@@ -42,7 +42,7 @@ public class InvertFilter implements IImageFilter{
                  g = (255-imageIn.getGComponent(x, y));
                  b = (255-imageIn.getBComponent(x, y));
 
-                 imageIn.setPixelColor(x,y,r,g,b);
+                 imageIn.setPixelColor(x,y,r,g,b,imageIn.getAComponent(x, y));
              }
         } 
         return imageIn;

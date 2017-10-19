@@ -67,7 +67,7 @@ public class GradientFilter  implements IImageFilter{
                 dcos = cos * radio;
                 dsin = sin * radio;
                 dist = (int)Math.sqrt((double)((dcos * dcos) + (dsin * dsin)));
-                imageIn.setPixelColor(j, i, red[dist], green[dist], blue[dist]);
+                imageIn.setPixelColor(j, i, red[dist], green[dist], blue[dist],imageIn.getAComponent(j,i));
             }
         }
         return imageIn;

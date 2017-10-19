@@ -34,7 +34,7 @@ public class BlackWhiteFilter implements IImageFilter {
                     g = imageIn.getGComponent(x, y);
                     b = imageIn.getBComponent(x, y);
                     corfinal = (int)((r*0.3)+(b*0.59)+(g*0.11));
-                    imageIn.setPixelColor(x,y,corfinal,corfinal,corfinal);
+                    imageIn.setPixelColor(x,y,corfinal,corfinal,corfinal,imageIn.getAComponent(x, y));
             }
         }
         return imageIn;

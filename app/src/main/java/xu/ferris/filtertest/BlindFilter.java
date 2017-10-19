@@ -56,14 +56,14 @@ public class BlindFilter implements IImageFilter{
 			    int colorB = _color & 0x0000FF;
 				if (_color == 0xFF)
 				{
-					imageIn.setPixelColor(x, y, colorR, colorG, colorB);
+					imageIn.setPixelColor(x, y, colorR, colorG, colorB,imageIn.getAComponent(x, y));
 					continue ;
 				}
 				if (a == 0)
 					continue ;
 
 				int t = 0xFF - a ;
-				imageIn.setPixelColor(x, y, (colorR * a + r * t) / 0xFF, (colorG * a + g * t) / 0xFF, (colorB * a + b * t) / 0xFF);
+				imageIn.setPixelColor(x, y, (colorR * a + r * t) / 0xFF, (colorG * a + g * t) / 0xFF, (colorB * a + b * t) / 0xFF,imageIn.getAComponent(x, y));
 			  }
 		  }
         return imageIn;     

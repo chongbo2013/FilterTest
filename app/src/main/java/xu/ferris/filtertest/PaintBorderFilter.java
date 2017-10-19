@@ -86,7 +86,7 @@ public class PaintBorderFilter implements IImageFilter{
                 r = (r > R ? R : (r < 0 ? 0 : r));
                 g = (g > G ? G : (g < 0 ? 0 : g));
                 b = (b > B ? B : (b < 0 ? 0 : b));
-                imageIn.setPixelColor(x, y, r, g, b);
+                imageIn.setPixelColor(x, y, r, g, b,imageIn.getAComponent(x, y));
             }
         }
         ImageBlender blender = new ImageBlender();

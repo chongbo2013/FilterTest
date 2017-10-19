@@ -87,7 +87,7 @@ public class CleanGlassFilter implements IImageFilter{
                     r = clone.getRComponent(pixeldx, pixeldy);
                     g = clone.getGComponent(pixeldx, pixeldy);
                     b = clone.getBComponent(pixeldx, pixeldy);
-                    imageIn.setPixelColor(x, y, r, g, b);
+                    imageIn.setPixelColor(x, y, r, g, b,imageIn.getAComponent(x, y));
                 }
             }
         }

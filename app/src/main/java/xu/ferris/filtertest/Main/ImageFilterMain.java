@@ -109,7 +109,7 @@ public class ImageFilterMain extends Activity {
 		imageView= (ImageView) findViewById(R.id.imgfilter);
 		textView = (TextView) findViewById(R.id.runtime);
 
-		Bitmap bitmap = BitmapFactory.decodeResource(ImageFilterMain.this.getResources(), R.drawable.image);
+		Bitmap bitmap = BitmapFactory.decodeResource(ImageFilterMain.this.getResources(), R.drawable.browser);
 		imageView.setImageBitmap(bitmap);
 
 		LoadImageFilter();
@@ -152,7 +152,7 @@ public class ImageFilterMain extends Activity {
 			Image img = null;
 			try
 	    	{
-				Bitmap bitmap = BitmapFactory.decodeResource(activity.getResources(), R.drawable.image);
+				Bitmap bitmap = BitmapFactory.decodeResource(activity.getResources(), R.drawable.browser);
 				img = new Image(bitmap);
 				if (filter != null) {
 					img = filter.process(img);

@@ -58,7 +58,7 @@ public class RectMatrixFilter extends RadialDistortionFilter{
 	            	r = imageIn.getRComponent(xx, yy);
 	            	g = imageIn.getGComponent(xx, yy);
 	            	b = imageIn.getBComponent(xx, yy);
-	            	clone.setPixelColor(xx,  yy, r, g, b);
+	            	clone.setPixelColor(xx,  yy, r, g, b,imageIn.getAComponent(xx, yy));
             	}
             }
 	   }
@@ -68,7 +68,7 @@ public class RectMatrixFilter extends RadialDistortionFilter{
             	r = imageIn.getRComponent(xx, yy);
             	g = imageIn.getGComponent(xx, yy);
             	b = imageIn.getBComponent(xx, yy);
-            	clone.setPixelColor(xx, yy, r, g, b);
+            	clone.setPixelColor(xx, yy, r, g, b,imageIn.getAComponent(xx, yy));
   	       }
        }	
        
@@ -87,7 +87,7 @@ public class RectMatrixFilter extends RadialDistortionFilter{
                 	r = imageIn.getRComponent(xx, yy);
 	            	g = imageIn.getGComponent(xx, yy);
 	            	b = imageIn.getBComponent(xx, yy);
-	            	clone.setPixelColor(xx,  yy, r, g, b);
+	            	clone.setPixelColor(xx,  yy, r, g, b,imageIn.getAComponent(xx, yy));
             	}
             }
        }   
@@ -97,7 +97,7 @@ public class RectMatrixFilter extends RadialDistortionFilter{
             	r = imageIn.getRComponent(xx, yy);
             	g = imageIn.getGComponent(xx, yy);
             	b = imageIn.getBComponent(xx, yy);
-            	clone.setPixelColor(xx, yy, r, g, b);
+            	clone.setPixelColor(xx, yy, r, g, b,imageIn.getAComponent(xx, yy));
   	       }
        }	
 

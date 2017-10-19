@@ -52,7 +52,7 @@ public class NoiseFilter implements IImageFilter{
                     g = (ggg > 0xff) ? ((byte)0xff) : ((ggg < 0) ? ((byte)0) : ((byte)ggg));
                     b = (bbb > 0xff) ? ((byte)0xff) : ((bbb < 0) ? ((byte)0) : ((byte)bbb));
                  }              
-                 imageIn.setPixelColor(x,y,r,g,b);
+                 imageIn.setPixelColor(x,y,r,g,b,imageIn.getAComponent(x, y));
              }
         } 
 	    return imageIn;

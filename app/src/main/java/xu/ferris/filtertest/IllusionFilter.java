@@ -56,7 +56,7 @@ public class IllusionFilter implements IImageFilter{
 				r = Function.FClamp0255 (r + radius * (clone.getRComponent(xx, yy) - r)) ;
 				g = Function.FClamp0255 (g + radius * (clone.getGComponent(xx, yy) - g)) ;
 				b = Function.FClamp0255 (b + radius * (clone.getBComponent(xx, yy) - b)) ;
-				imageIn.setPixelColor(x, y, r, g, b);
+				imageIn.setPixelColor(x, y, r, g, b,imageIn.getAComponent(x, y));
 			}
 		}
         return imageIn;

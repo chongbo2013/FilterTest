@@ -40,7 +40,7 @@ public class ColorQuantizeFilter implements IImageFilter{
                  r = (quanR > 255f) ? 255 : ((quanR < 0f) ? 0 : ((int)quanR));
                  g = (quanG > 255f) ? 255 : ((quanG < 0f) ? 0 : ((int) quanG));
                  b = (quanB > 255f) ? 255 : ((quanB < 0f) ? 0: ((int) quanB));
-                 imageIn.setPixelColor(x,y,r,g,b);
+                 imageIn.setPixelColor(x,y,r,g,b,imageIn.getAComponent(x, y));
              }
         } 
         return imageIn;

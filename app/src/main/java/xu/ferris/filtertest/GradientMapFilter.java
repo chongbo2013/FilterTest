@@ -56,6 +56,7 @@ public class GradientMapFilter  implements IImageFilter{
 	        int r = (imageIn.colorArray[i]& 0x00FF0000) >>> 16;
 	        int g = (imageIn.colorArray[i]& 0x0000FF00) >>> 8;
 	        int b = imageIn.colorArray[i]& 0x000000FF;
+			int a = imageIn.colorArray[i]& 0xFF000000 >>> 24;
 	        int index = (((r * 0x1b36) + (g * 0x5b8c)) + (b * 0x93e)) >> 15;
 	        if (bfactor != 0)
 	        {
@@ -69,7 +70,7 @@ public class GradientMapFilter  implements IImageFilter{
 	            index += 0x80;
 	            index = (index > 0xff) ? 0xff : ((index < 0) ? 0 : index);
 	        }
-	        bitmap.colorArray[i] = (0xff << 24) + (red[index] << 16) + (green[index] << 8) + blue[index];
+	        bitmap.colorArray[i] = (a << 24) + (red[index] << 16) + (green[index] << 8) + blue[index];
 	    }
 	    return bitmap;   	
     }

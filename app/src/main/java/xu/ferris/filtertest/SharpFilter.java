@@ -60,7 +60,7 @@ public class SharpFilter implements IImageFilter{
                         Index++;
                     }
 				}
-				imageIn.setPixelColor(x-1, y-1, Image.SAFECOLOR(r), Image.SAFECOLOR(g), Image.SAFECOLOR(b));
+				imageIn.setPixelColor(x-1, y-1, Image.SAFECOLOR(r), Image.SAFECOLOR(g), Image.SAFECOLOR(b),imageIn.getAComponent(x-1, y-1));
             }
 	    }
 		return imageIn;

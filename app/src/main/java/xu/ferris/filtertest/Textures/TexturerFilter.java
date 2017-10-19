@@ -125,7 +125,7 @@ public class TexturerFilter  implements IImageFilter {
                 r = (byte) Math.min( 255.0f, ( preserveLevel * r) + ( filterLevel * r) * t );
                 g = (byte) Math.min( 255.0f, ( preserveLevel * g) + ( filterLevel * g) * t );
                 b = (byte) Math.min( 255.0f, ( preserveLevel * b) + ( filterLevel * b) * t );
-                imageIn.setPixelColor(x, y, r, g, b);                
+                imageIn.setPixelColor(x, y, r, g, b,imageIn.getAComponent(x, y));
             }
         }
         return imageIn;

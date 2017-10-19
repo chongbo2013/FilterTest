@@ -56,7 +56,7 @@ public class ThreeDGridFilter implements IImageFilter{
 					else if (((x+2) % _size == 0) && (y % _size > 0) && ((y+1) % _size) > 0)
 						d = -_depth ; // right
 
-				   imageIn.setPixelColor(x, y, Image.SAFECOLOR(r+d),  Image.SAFECOLOR(g+d),  Image.SAFECOLOR(b+d));
+				   imageIn.setPixelColor(x, y, Image.SAFECOLOR(r+d),  Image.SAFECOLOR(g+d),  Image.SAFECOLOR(b+d),imageIn.getAComponent(x, y));
 			  }
 		  }
         return imageIn;

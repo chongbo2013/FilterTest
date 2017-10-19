@@ -72,7 +72,7 @@ public class FocusFilter extends GaussianBlurFilter {
                 if (distSq > min)
                 {
                     int pos = (num + j) * 3;
-                    imageIn.setPixelColor(j, i, (byte)(imageArray[pos] * 255f), (byte)(imageArray[pos + 1] * 255f), (byte)(imageArray[pos + 2] * 255f));
+                    imageIn.setPixelColor(j, i, (byte)(imageArray[pos] * 255f), (byte)(imageArray[pos + 1] * 255f), (byte)(imageArray[pos + 2] * 255f),imageIn.getAComponent(j,i));
                  }
             }
         }

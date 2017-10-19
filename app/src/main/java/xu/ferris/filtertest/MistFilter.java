@@ -46,7 +46,7 @@ public class MistFilter implements IImageFilter{
             	  r = clone.getRComponent(dx, dy);
             	  g = clone.getGComponent(dx, dy);
             	  b = clone.getBComponent(dx, dy);
-            	  imageIn.setPixelColor(x, y, r, g, b);
+            	  imageIn.setPixelColor(x, y, r, g, b,imageIn.getAComponent(x, y));
              }
         } 
         return imageIn;     

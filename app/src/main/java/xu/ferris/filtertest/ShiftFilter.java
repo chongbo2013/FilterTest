@@ -47,7 +47,7 @@ public class ShiftFilter implements IImageFilter{
 			       r = clone.getRComponent(sx, y);
 				   g = clone.getGComponent(sx, y);
 				   b = clone.getBComponent(sx, y);
-				   imageIn.setPixelColor(x, y, r, g, b);
+				   imageIn.setPixelColor(x, y, r, g, b,imageIn.getAComponent(x, y));
 			  }
 		  }
         return imageIn;     

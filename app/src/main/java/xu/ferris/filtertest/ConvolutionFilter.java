@@ -187,7 +187,7 @@ public class ConvolutionFilter implements IImageFilter{
                 if (g > 0xff){
                     g = 0xff;
                 }
-                imageIn.setPixelColor(x,y,r,g,b);
+                imageIn.setPixelColor(x,y,r,g,b,imageIn.getAComponent(x, y));
             }
         }
     	
