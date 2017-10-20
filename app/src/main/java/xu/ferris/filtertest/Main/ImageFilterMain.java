@@ -17,6 +17,7 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Gallery;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import xu.ferris.filtertest.AutoAdjustFilter;
@@ -233,8 +234,6 @@ public class ImageFilterMain extends Activity {
 			filterArray.add(new FilterInfo(R.drawable.hslmodify_filter5, new HslModifyFilter(200f)));
 			filterArray.add(new FilterInfo(R.drawable.hslmodify_filter6, new HslModifyFilter(250f)));
 			filterArray.add(new FilterInfo(R.drawable.hslmodify_filter7, new HslModifyFilter(300f)));
-			
-			//v0.3  
 			filterArray.add(new FilterInfo(R.drawable.zoomblur_filter, new ZoomBlurFilter(30)));
 			filterArray.add(new FilterInfo(R.drawable.threedgrid_filter, new ThreeDGridFilter(16, 100)));
 			filterArray.add(new FilterInfo(R.drawable.colortone_filter, new ColorToneFilter(Color.rgb(33, 168, 254), 192)));
@@ -257,8 +256,6 @@ public class ImageFilterMain extends Activity {
 			filterArray.add(new FilterInfo(R.drawable.posterize_filter, new PosterizeFilter(2)));
 			filterArray.add(new FilterInfo(R.drawable.gamma_filter, new GammaFilter(50)));
 			filterArray.add(new FilterInfo(R.drawable.sharp_filter, new SharpFilter()));
-			
-			//v0.2
 			filterArray.add(new FilterInfo(R.drawable.invert_filter, new ComicFilter()));
 			filterArray.add(new FilterInfo(R.drawable.invert_filter, new SceneFilter(5f, Gradient.Scene())));//green
 			filterArray.add(new FilterInfo(R.drawable.invert_filter, new SceneFilter(5f, Gradient.Scene1())));//purple
@@ -271,8 +268,6 @@ public class ImageFilterMain extends Activity {
 			filterArray.add(new FilterInfo(R.drawable.invert_filter, new PaintBorderFilter(0x00FFFF)));//yellow
 			filterArray.add(new FilterInfo(R.drawable.invert_filter, new PaintBorderFilter(0xFF0000)));//blue
 			filterArray.add(new FilterInfo(R.drawable.invert_filter, new LomoFilter()));
-			
-			//v0.1
 			filterArray.add(new FilterInfo(R.drawable.invert_filter, new InvertFilter()));
 			filterArray.add(new FilterInfo(R.drawable.blackwhite_filter, new BlackWhiteFilter()));
 			filterArray.add(new FilterInfo(R.drawable.edge_filter, new EdgeFilter()));
@@ -312,7 +307,6 @@ public class ImageFilterMain extends Activity {
 			filterArray.add(new FilterInfo(R.drawable.feather_filter,new FeatherFilter()));
 			filterArray.add(new FilterInfo(R.drawable.xradiation_filter,new XRadiationFilter()));
 			filterArray.add(new FilterInfo(R.drawable.nightvision_filter,new NightVisionFilter()));
-
 			filterArray.add(new FilterInfo(R.drawable.saturationmodity_filter,null/* 此处会生成原图效果 */));
 		}
 
@@ -333,14 +327,21 @@ public class ImageFilterMain extends Activity {
 			Bitmap bmImg = BitmapFactory
 					.decodeResource(mContext.getResources(),
 							filterArray.get(position).filterID);
-			int width = 100;// bmImg.getWidth();
-			int height = 100;// bmImg.getHeight();
+			int width = 300;// bmImg.getWidth();
+			int height = 200;// bmImg.getHeight();
 			bmImg.recycle();
+			LinearLayout linearLayout=new LinearLayout(mContext);
+			linearLayout.setOrientation(LinearLayout.VERTICAL);
+
 			ImageView imageview = new ImageView(mContext);
 			imageview.setImageResource(filterArray.get(position).filterID);
 			imageview.setLayoutParams(new Gallery.LayoutParams(width, height));
 			imageview.setScaleType(ImageView.ScaleType.FIT_CENTER);// 设置显示比例类型
-			return imageview;
+			linearLayout.addView(imageview);
+			TextView textView=new TextView(mContext);
+			textView.setText("position:"+position);
+			linearLayout.addView(textView);
+			return linearLayout;
 		}
 	};
 

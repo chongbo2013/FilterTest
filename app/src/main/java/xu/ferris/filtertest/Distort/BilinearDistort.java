@@ -101,7 +101,12 @@ public class BilinearDistort implements IImageFilter {
 						color[3] = IsInside(width, height, nSrcX_1, nSrcY_1) ? clone.getPixelColor(nSrcX_1,nSrcY_1) : crNull;
 						cr = GetBilinear(un_x-nSrcX, un_y-nSrcY, color);		
 					}
-					imageIn.setPixelColor(x, y, cr);		
+				  int a=imageIn.getAComponent(x,y);
+				  int r2=imageIn.getRComponent(cr);
+				  int g2=imageIn.getGComponent(cr);
+				  int b2=imageIn.getBComponent(cr);
+				  int newColor= Color.argb(a,r2,g2,b2);
+					imageIn.setPixelColor(x, y, newColor);
 			  }
 		  }
 	    return imageIn;

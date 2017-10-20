@@ -87,7 +87,12 @@ public class NeonFilter implements IImageFilter {
                 Paint grayscaleColor = grayMatrix[magnitude];
 
                 // Apply the color into a new image
-                imageIn.setPixelColor(x, y, grayscaleColor.getColor());
+                int a=imageIn.getAComponent(x,y);
+                int r2=imageIn.getRComponent(grayscaleColor.getColor());
+                int g2=imageIn.getGComponent(grayscaleColor.getColor());
+                int b2=imageIn.getBComponent(grayscaleColor.getColor());
+                int newColor= Color.argb(a,r2,g2,b2);
+                imageIn.setPixelColor(x, y, newColor);
             }
         }
 

@@ -21,6 +21,9 @@ package xu.ferris.filtertest;
 import android.graphics.Color;
 import android.graphics.Paint;
 
+/**
+ * 主要是这个效果
+ */
 public class EdgeFilter implements IImageFilter {
 
     //@Override
@@ -68,11 +71,15 @@ public class EdgeFilter implements IImageFilter {
                 int value=grayscaleColor.getColor();
 
                 int a=imageIn.getAComponent(x, y);
-                int r=imageIn.getRComponent(grayscaleColor.getColor());
-                int g=imageIn.getGComponent(grayscaleColor.getColor());
-                int b=imageIn.getBComponent(grayscaleColor.getColor());
-                int newColor=Color.argb(a,r,g,b);
-                imageIn.setPixelColor(x, y, newColor);
+                int r=imageIn.getRComponent(value);
+                int g=imageIn.getGComponent(value);
+                int b=imageIn.getBComponent(value);
+                int finalColor=Color.argb(a,r,g,b);
+
+                if(r>=255&&g>=255&&b>=255){
+                    finalColor=Color.BLACK;
+                }
+                imageIn.setPixelColor(x, y, finalColor);
             }
         }
 

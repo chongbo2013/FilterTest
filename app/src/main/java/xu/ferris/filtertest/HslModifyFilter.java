@@ -19,6 +19,8 @@
 
 package xu.ferris.filtertest;
 
+import android.graphics.Color;
+
 public class HslModifyFilter implements IImageFilter{
 	private float HueFactor;//ɫ��
     
@@ -43,11 +45,17 @@ public class HslModifyFilter implements IImageFilter{
          	    r = imageIn.getRComponent(x, y);
                 g = imageIn.getGComponent(x, y);
                 b = imageIn.getBComponent(x, y);
-
+               
                 HslColor.RgbToHsl(r, g, b, hsl);
                 hsl.h = this.HueFactor;
                 int color = HslColor.HslToRgb(hsl);
-                imageIn.setPixelColor(x, y, color);
+
+                int  a = imageIn.getAComponent(x, y);
+                int r2=imageIn.getRComponent(color);
+                int g2=imageIn.getGComponent(color);
+                int b2=imageIn.getBComponent(color);
+                int newColor= Color.argb(a,r2,g2,b2);
+                imageIn.setPixelColor(x, y, newColor);
             }
         }
         return imageIn;

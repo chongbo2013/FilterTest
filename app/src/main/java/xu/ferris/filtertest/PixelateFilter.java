@@ -18,6 +18,8 @@
 
 package xu.ferris.filtertest;
 
+import android.graphics.Color;
+
 public class PixelateFilter implements IImageFilter {
     
     /**
@@ -115,7 +117,12 @@ public class PixelateFilter implements IImageFilter {
         for(int x=a_x; x<a_x+squareSize; x++){
             for(int y=a_y; y<a_y+squareSize; y++){
                 if(x < imageIn.getWidth() && y < imageIn.getHeight()){
-                    imageIn.setPixelColor(x,y,a_rgb);
+                    int a=imageIn.getAComponent(x,y);
+                    int r2=imageIn.getRComponent(a_rgb);
+                    int g2=imageIn.getGComponent(a_rgb);
+                    int b2=imageIn.getBComponent(a_rgb);
+                    int newColor= Color.argb(a,r2,g2,b2);
+                    imageIn.setPixelColor(x,y,newColor);
                 }
             }
         }                                       

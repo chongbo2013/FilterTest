@@ -169,7 +169,11 @@ public class ColorToneFilter implements IImageFilter{
                    a = imageIn.getAComponent(x, y);
 				   double  l = _lum_tab[GetGrayscale(r, g, b)] ;
 				   int   cr = HLStoRGB (_hue, l, _saturation) ;
-				   imageIn.setPixelColor(x, y, cr);
+                  int r2=imageIn.getRComponent(cr);
+                  int g2=imageIn.getGComponent(cr);
+                  int b2=imageIn.getBComponent(cr);
+                  int newColor= Color.argb(a,r2,g2,b2);
+				   imageIn.setPixelColor(x, y, newColor);
 			  }
 		  }
         return imageIn;
